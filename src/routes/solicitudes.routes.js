@@ -4,18 +4,18 @@ import { getSolicitudes, addSolicitud, getSolicitudById ,deleteSolicitudById, up
 const router = Router()
 
 //Obtener solicitudes
-router.get('/solicitudes', getSolicitudes);
+router.get('/api/solicitudes', getSolicitudes);
 
 //Crear solicitudes
-router.post('/solicitudes', addSolicitud);
+router.post('/api/solicitudes', addSolicitud);
 
 //Obtener solicitudes por id
-router.get('/solicitudes/:id', getSolicitudById);
+router.get('/api/solicitudes/:id', getSolicitudById);
 
 //Eliminar solicitudes
-router.delete('/solicitudes/:id', deleteSolicitudById);
+router.delete('/api/solicitudes/:id', deleteSolicitudById);
 
 //Editar solicitud
-router.put('/solicitudes/:id', updateSolicitudAsignadaById);
+router.put('/api/solicitudes/:id', updateSolicitudAsignadaById);
 
 export default router;

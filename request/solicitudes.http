@@ -1,4 +1,4 @@
-@url = http://localhost:4000/solicitudes
+@url = http://localhost:4000/api/solicitudes
 
 ### --Mostrar todas las solicitudes--
 

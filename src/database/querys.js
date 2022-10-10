@@ -6,7 +6,7 @@ export const queries = {
     'Radicado, Descripcion, FechaSolicitud, FechaRespuesta, IDResponsable, CorreoSolicitante, NombreSolicitante, ApellidoSolicitante, '+
     'TelefonoSolicitante, NombreEmpresa, IdTipoSolicitud, IDEstado)' +
     'values (SUBSTRING((SELECT TipoSolicitud from TipoSolicitud where IDTipo=@IdTipoSolicitud),1,3) + (SELECT (CONVERT(VARCHAR,GETDATE(),112) + CONVERT(VARCHAR,(SELECT MAX(IDSolicitud) FROM Solicitud)+1))), '+
-    '@Descripcion, GETDATE(), @FechaRespuesta, @IDResponsable, @CorreoSolicitante, @NombreSolicitante, @ApellidoSolicitante, @TelefonoSolicitante, @NombreEmpresa, @IdTipoSolicitud, @IDEstado)'
+    '@Descripcion, GETDATE(), NULL, NULL, @CorreoSolicitante, @NombreSolicitante, @ApellidoSolicitante, @TelefonoSolicitante, @NombreEmpresa, @IdTipoSolicitud, 1)'
     ,getSolicitudById: 'select * from Solicitud where IDSolicitud = @id'
     ,deleteSolicitudById: 'delete from Solicitud where IDSolicitud = @id'
     ,updateSolicitudAsignadaById: 'update Solicitud set IDResponsable = @IDResponsable, IDEstado = 2 where IDSolicitud = @id'
