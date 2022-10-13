@@ -13,10 +13,10 @@ export const getSolicitudes = async (req, res) => {
 };
 
 export const addSolicitud = async (req, res) => {
-    const { Descripcion, FechaRespuesta, IDResponsable, 
+    const { Radicado, Descripcion, FechaRespuesta, IDResponsable, 
         CorreoSolicitante, NombreSolicitante, ApellidoSolicitante, TelefonoSolicitante, NombreEmpresa, IdTipoSolicitud, IDEstado } = req.body
 
-    if ( Descripcion == null || CorreoSolicitante == null || NombreSolicitante == null 
+    if ( Radicado == null || Descripcion == null || CorreoSolicitante == null || NombreSolicitante == null 
         || ApellidoSolicitante == null || TelefonoSolicitante == null || NombreEmpresa == null ||
         IdTipoSolicitud == null || IDEstado == null ){
             return res.status(400).json({msg:'Información incompleta o erronea, validar los datos enviados'})
@@ -25,8 +25,8 @@ export const addSolicitud = async (req, res) => {
     try {
         const pool = await getConnection()
         await pool.request()
+        .input('Radicado', sql.VarChar, Radicado)
         .input('Descripcion', sql.VarChar, Descripcion)
-        .input('FechaRespuesta', sql.Date, FechaRespuesta)
         .input('IDResponsable', sql.Int, IDResponsable)
         .input('CorreoSolicitante', sql.VarChar, CorreoSolicitante)
         .input('NombreSolicitante', sql.VarChar, NombreSolicitante)
@@ -34,11 +34,10 @@ export const addSolicitud = async (req, res) => {
         .input('TelefonoSolicitante', sql.VarChar, TelefonoSolicitante)
         .input('NombreEmpresa', sql.VarChar, NombreEmpresa)
         .input('IdTipoSolicitud', sql.Int, IdTipoSolicitud)
-        .input('IDEstado', sql.Int, IDEstado)
         .query(queries.addNewSolicitud)
     
-        res.status(201).json({ Descripcion, FechaRespuesta, IDResponsable, 
-            CorreoSolicitante, NombreSolicitante, ApellidoSolicitante, TelefonoSolicitante, NombreEmpresa, IdTipoSolicitud, IDEstado });
+        res.status(201).json({ Radicado ,Descripcion, IDResponsable, 
+            CorreoSolicitante, NombreSolicitante, ApellidoSolicitante, TelefonoSolicitante, NombreEmpresa, IdTipoSolicitud });
     } catch (error) {
         res.status(500);
         res.send(error.message);
