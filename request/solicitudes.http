@@ -10,10 +10,10 @@ POST {{url}}
 Content-Type: application/json
 
 {
-    "Descripcion": "Solicitud 8",
-    "CorreoSolicitante": "correo8@prueba.com",
-    "NombreSolicitante": "Prueba8",
-    "ApellidoSolicitante": "Solicitud8",
+    "Descripcion": "Solicitud 10",
+    "CorreoSolicitante": "correo10@prueba.com",
+    "NombreSolicitante": "Prueba10",
+    "ApellidoSolicitante": "Solicitud10",
     "TelefonoSolicitante": "3141234568",
     "NombreEmpresa": "NOVATECH",
     "IdTipoSolicitud": 1
