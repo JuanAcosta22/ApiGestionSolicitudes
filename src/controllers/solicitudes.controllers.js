@@ -13,19 +13,18 @@ export const getSolicitudes = async (req, res) => {
 };
 
 export const addSolicitud = async (req, res) => {
-    const { Radicado, Descripcion, FechaRespuesta, IDResponsable, 
-        CorreoSolicitante, NombreSolicitante, ApellidoSolicitante, TelefonoSolicitante, NombreEmpresa, IdTipoSolicitud, IDEstado } = req.body
+    const { Descripcion, IDResponsable, 
+        CorreoSolicitante, NombreSolicitante, ApellidoSolicitante, TelefonoSolicitante, NombreEmpresa, IdTipoSolicitud } = req.body
 
-    if ( Radicado == null || Descripcion == null || CorreoSolicitante == null || NombreSolicitante == null 
+    if ( Descripcion == null || CorreoSolicitante == null || NombreSolicitante == null 
         || ApellidoSolicitante == null || TelefonoSolicitante == null || NombreEmpresa == null ||
-        IdTipoSolicitud == null || IDEstado == null ){
+        IdTipoSolicitud == null ){
             return res.status(400).json({msg:'Información incompleta o erronea, validar los datos enviados'})
         }
 
     try {
         const pool = await getConnection()
         await pool.request()
-        .input('Radicado', sql.VarChar, Radicado)
         .input('Descripcion', sql.VarChar, Descripcion)
         .input('IDResponsable', sql.Int, IDResponsable)
         .input('CorreoSolicitante', sql.VarChar, CorreoSolicitante)
@@ -36,7 +35,7 @@ export const addSolicitud = async (req, res) => {
         .input('IdTipoSolicitud', sql.Int, IdTipoSolicitud)
         .query(queries.addNewSolicitud)
     
-        res.status(201).json({ Radicado ,Descripcion, IDResponsable, 
+        res.status(201).json({ Descripcion, IDResponsable, 
             CorreoSolicitante, NombreSolicitante, ApellidoSolicitante, TelefonoSolicitante, NombreEmpresa, IdTipoSolicitud });
     } catch (error) {
         res.status(500);

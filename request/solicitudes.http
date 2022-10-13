@@ -10,15 +10,13 @@ POST {{url}}
 Content-Type: application/json
 
 {
-    "Radicado": "mvmprueba-1",
-    "Descripcion": "Solicitud 1",
-    "CorreoSolicitante": "correo1@prueba.com",
-    "NombreSolicitante": "Prueba1",
-    "ApellidoSolicitante": "Solicitud1",
-    "TelefonoSolicitante": "3141234567",
+    "Descripcion": "Solicitud 8",
+    "CorreoSolicitante": "correo8@prueba.com",
+    "NombreSolicitante": "Prueba8",
+    "ApellidoSolicitante": "Solicitud8",
+    "TelefonoSolicitante": "3141234568",
     "NombreEmpresa": "NOVATECH",
-    "IdTipoSolicitud": 1,
-    "IDEstado": 1
+    "IdTipoSolicitud": 1
 }
 
 ### --Mostrar una solicitud según el id--
@@ -35,5 +33,5 @@ PUT {{url}}/72
 Content-Type: application/json
 
 {
-    "IDResponsable": 4
+    "IDResponsable": 1
 }
