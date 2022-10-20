@@ -37,4 +37,4 @@ Content-Type: application/json
 }
 
 ### --Obtener tipos de solicitud--
-GET {{url}}solicitud
+GET {{url}}tipoSolicitud
