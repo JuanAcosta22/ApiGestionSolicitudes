@@ -1,26 +1,26 @@
 import sql from 'mssql';
 
  const dbConfig = {
-  user: 'jdaqui',
-  password: 'Valeteamo22*',
-  server: 'localhost', 
-  database: 'gestionsolicitudes',
-  options: { 
-    trustServerCertificate: true,
-  }
-    // user: 'jovenesmvm',
-    // password: '0^618Bjt37y@',
-    // database: 'gestionsolicitudes',
-    // server: 'gestionsolicitudes.database.windows.net',
-    // pool: {
-    //   max: 10,
-    //   min: 0,
-    //   idleTimeoutMillis: 30000
-    // },
-    // options: {
-    //   encrypt: true,
-    //   trustServerCertificate: false
-    // }
+   user: 'jdaqui',
+   password: 'Valeteamo22*',
+   server: 'localhost', 
+   database: 'gestionsolicitudes',
+   options: { 
+     trustServerCertificate: true,
+   }
+    //  user: 'jovenesmvm',
+    //  password: '0^618Bjt37y@',
+    //  database: 'gestionsolicitudes2',
+    //  server: 'gestionsolicitudes2.database.windows.net',
+    //  pool: {
+    //    max: 10,
+    //    min: 0,
+    //    idleTimeoutMillis: 30000
+    //  },
+    //  options: {
+    //    encrypt: true,
+    //    trustServerCertificate: false
+    //  }
 };
 
 export async function getConnection() {
