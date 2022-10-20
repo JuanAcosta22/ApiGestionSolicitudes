@@ -88,3 +88,14 @@ export const updateSolicitudAsignadaById = async (req, res) => {
             res.send(error.message);
         }
 };
+
+export const getTipoSolicitud = async (req, res) => {
+    try {
+        const pool = await getConnection();
+        const result = await pool.request().query(queries.getTipoSolicitud);    
+        res.status(200).json(result.recordset);
+    } catch (error) {
+        res.status(500);
+        res.send(error.message);
+    }
+};

@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { getSolicitudes, addSolicitud, getSolicitudById ,deleteSolicitudById, updateSolicitudAsignadaById, } from '../controllers/solicitudes.controllers';
+import { getSolicitudes, addSolicitud, getSolicitudById ,deleteSolicitudById, updateSolicitudAsignadaById, getTipoSolicitud } from '../controllers/solicitudes.controllers';
 
 const router = Router()
 
@@ -17,5 +17,8 @@ router.delete('/api/solicitudes/:id', deleteSolicitudById);
 
 //Editar solicitud
 router.put('/api/solicitudes/:id', updateSolicitudAsignadaById);
+
+//Obtener tipos de solicitudes
+router.get('/api/tipoSolicitud', getTipoSolicitud);
 
 export default router;
