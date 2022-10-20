@@ -1,13 +1,12 @@
-@url1 = http://localhost:4000/api/solicitudes
-@url2 = http://localhost:4000/api/solicitud
+@url = http://localhost:4000/api/
 
 ### --Mostrar todas las solicitudes--
 
-GET {{url1}}
+GET {{url}}solicitudes
 
 ### --Crear nueva solicitud--
 
-POST {{url1}}
+POST {{url}}solicitudes
 Content-Type: application/json
 
 {
@@ -22,15 +21,15 @@ Content-Type: application/json
 
 ### --Mostrar una solicitud según el id--
 
-GET {{url1}}/68
+GET {{url}}solicitudes/68
 
 ### --Eliminar una solicitud según el id--
 
-DELETE {{url1}}/71
+DELETE {{url}}solicitudes/71
 
 ### --Actualizar responsable y estado según id--
 
-PUT {{url1}}/72
+PUT {{url}}solicitudes/72
 Content-Type: application/json
 
 {
@@ -38,4 +37,4 @@ Content-Type: application/json
 }
 
 ### --Obtener tipos de solicitud--
-GET {{url2}}
+GET {{url}}solicitud
