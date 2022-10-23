@@ -25,7 +25,7 @@ GET {{url}}/solicitudes/8
 
 ### --Eliminar una solicitud según el id--
 
-DELETE {{url}}/solicitudes/8
+DELETE {{url}}/solicitudes/2
 
 ### --Actualizar responsable y estado según id--
 
