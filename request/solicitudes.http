@@ -1,4 +1,4 @@
-@url = https://apigsolicitudesmvm.azurewebsites.net
+@url = http://localhost:4000
 
 ### --Mostrar todas las solicitudes--
 
@@ -21,11 +21,11 @@ Content-Type: application/json
 
 ### --Mostrar una solicitud según el id--
 
-GET {{url}}/solicitudes/68
+GET {{url}}/solicitudes/8
 
 ### --Eliminar una solicitud según el id--
 
-DELETE {{url}}/solicitudes/71
+DELETE {{url}}/solicitudes/8
 
 ### --Actualizar responsable y estado según id--
 
