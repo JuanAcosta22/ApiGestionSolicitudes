@@ -67,20 +67,23 @@ export const deleteSolicitudById = async (req, res) => {
     }
 };
 
-export const updateSolicitudAsignadaById = async (req, res) => {
-    const { IDResponsable } = req.body;
-    const { id } = req.params;
-
-    if ( IDResponsable == null ){
-            return res.status(400).json({msg:'Información incompleta o erronea, validar los datos enviados'})
-        }
+export const updateSolicitud = async (req, res) => {
+    const { Descripcion, CorreoSolicitante, NombreSolicitante, ApellidoSolicitante, 
+        TelefonoSolicitante, NombreEmpresa, Responsable, FechaRespuesta, Nombre  } = req.body
     
         try {
+            const id = req.params.id;
+            console.log(id);
             const pool = await getConnection()
-            const result = await pool.request()
-            .input("Id", sql.Int, id)
-            .input('IDResponsable', sql.Int, IDResponsable)
-            .query(queries.updateSolicitudAsignadaById)
+            await pool.request()
+            .input('id', sql.VarChar, id)
+            .input('Descripcion', sql.VarChar, Descripcion)
+            .input('CorreoSolicitante', sql.VarChar, CorreoSolicitante)
+            .input('NombreSolicitante', sql.VarChar, NombreSolicitante)
+            .input('ApellidoSolicitante', sql.VarChar, ApellidoSolicitante)
+            .input('TelefonoSolicitante', sql.VarChar, TelefonoSolicitante)
+            .input('NombreEmpresa', sql.VarChar, NombreEmpresa)
+            .query(queries.updateSolicitud)
 
             res.status(201).json( 'Actualización exitosa' );
         } catch (error) {
@@ -93,6 +96,28 @@ export const getTipoSolicitud = async (req, res) => {
     try {
         const pool = await getConnection();
         const result = await pool.request().query(queries.getTipoSolicitud);    
+        res.status(200).json(result.recordset);
+    } catch (error) {
+        res.status(500);
+        res.send(error.message);
+    }
+};
+
+export const getResponsable = async (req, res) => {
+    try {
+        const pool = await getConnection();
+        const result = await pool.request().query(queries.getResponsable);    
+        res.status(200).json(result.recordset);
+    } catch (error) {
+        res.status(500);
+        res.send(error.message);
+    }
+};
+
+export const getEstado = async (req, res) => {
+    try {
+        const pool = await getConnection();
+        const result = await pool.request().query(queries.getEstado);    
         res.status(200).json(result.recordset);
     } catch (error) {
         res.status(500);

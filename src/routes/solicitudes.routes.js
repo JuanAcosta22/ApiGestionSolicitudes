@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { getSolicitudes, addSolicitud, getSolicitudById ,deleteSolicitudById, updateSolicitudAsignadaById, getTipoSolicitud } from '../controllers/solicitudes.controllers';
+import { getSolicitudes, addSolicitud, getSolicitudById ,deleteSolicitudById, updateSolicitud, getTipoSolicitud, getResponsable, getEstado } from '../controllers/solicitudes.controllers';
 
 const router = Router()
 
@@ -7,18 +7,24 @@ const router = Router()
 router.get('/solicitudes', getSolicitudes);
 
 //Crear solicitudes
-router.post('/solicitudes', addSolicitud);
+router.post('/solicitud', addSolicitud);
 
 //Obtener solicitudes por id
-router.get('/solicitudes/:id', getSolicitudById);
+router.get('/solicitud/:id', getSolicitudById);
 
-//Eliminar solicitudes
-router.delete('/solicitudes/:id', deleteSolicitudById);
+//Eliminar solicitud
+router.delete('/solicitud/:id', deleteSolicitudById);
 
 //Editar solicitud
-router.put('/solicitudes/:id', updateSolicitudAsignadaById);
+router.put('/solicitud/:id', updateSolicitud);
 
 //Obtener tipos de solicitudes
 router.get('/tipoSolicitud', getTipoSolicitud);
+
+//Obtener tipos responsable
+router.get('/responsable', getResponsable);
+
+//Obtener tipos estado
+router.get('/nombre', getEstado);
 
 export default router;

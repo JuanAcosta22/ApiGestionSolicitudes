@@ -6,14 +6,14 @@ GET {{url}}/solicitudes
 
 ### --Crear nueva solicitud--
 
-POST {{url}}/solicitudes
+POST {{url}}/solicitud
 Content-Type: application/json
 
 {
-    "Descripcion": "Solicitud 10",
-    "CorreoSolicitante": "correo10@prueba.com",
-    "NombreSolicitante": "Prueba10",
-    "ApellidoSolicitante": "Solicitud10",
+    "Descripcion": "Solicitud2",
+    "CorreoSolicitante": "correo2@prueba.com",
+    "NombreSolicitante": "Prueba2",
+    "ApellidoSolicitante": "Solicitud2",
     "TelefonoSolicitante": "3141234568",
     "NombreEmpresa": "NOVATECH",
     "IdTipoSolicitud": 1
@@ -21,15 +21,15 @@ Content-Type: application/json
 
 ### --Mostrar una solicitud según el id--
 
-GET {{url}}/solicitudes/8
+GET {{url}}/solicitud/8
 
 ### --Eliminar una solicitud según el id--
 
-DELETE {{url}}/solicitudes/2
+DELETE {{url}}/solicitud/2
 
 ### --Actualizar responsable y estado según id--
 
-PUT {{url}}/solicitudes/72
+PUT {{url}}/solicitud/72
 Content-Type: application/json
 
 {
@@ -38,3 +38,9 @@ Content-Type: application/json
 
 ### --Obtener tipos de solicitud--
 GET {{url}}/tipoSolicitud
+
+### --Obtener responsables--
+GET {{url}}/responsable
+
+### --Obtener Estado--
+GET {{url}}/nombre
