@@ -1,4 +1,4 @@
-@url = http://localhost:4000
+@url = https://apigestionsolicitudes.azurewebsites.net
 
 ### --Mostrar todas las solicitudes--
 
